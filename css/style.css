@@ -1,0 +1,35 @@
+html,body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Black Han Sans', sans-serif;
+    
+    font-family: 'Righteous', cursive;
+    font-family: 'Jua', sans-serif;
+  }
+#map{
+    height:100vh;
+    width: 100%
+}
+
+.container-fluid .col-md-3{
+    background: tomato;
+}
+.col-md-2,.col-md-3,.col-md-4,.col-md-9{
+    padding: 0
+}
+.container-fluid form h2{
+    color: white;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    padding: 10px 20px
+}
+
+.container-fluid form input{
+    margin: 0 auto;
+    padding: 5px 20px;
+    display: block;
+    border-radius: 5px;
+    border:none;
+}
