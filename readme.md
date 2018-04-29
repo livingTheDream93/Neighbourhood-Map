@@ -1,7 +1,9 @@
 # Delhi's Places Of Intrest
 
 ### How to use this
-- Just clone the repo or visit the live link https://livingthedream93.github.io/Neighbourhood-Map/
+- Clone the repo
+- Open index.html file. 
+- Alternatively you can visit the live link https://livingthedream93.github.io/Neighbourhood-Map/
 
 ### Credits
 

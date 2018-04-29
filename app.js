@@ -171,15 +171,26 @@ function initMap() {
     }
 
     self.query = ko.observable('');
+    self.defaultListItems = [];
+
+    for(i = 0; i < viewModel.markers().length; i++){
+        defaultListItems.push(viewModel.markers()[i]);
+    }
+    console.log(defaultListItems);
+    self.listArr = ko.observableArray(self.defaultListItems);
+    //console.log(listArr)   
+    
     
     //-------------Input filter functionality ------------//
     self.search = function() { 
 		var str = "this is in search";
         var data = self.query().toLowerCase();
-      
+        self.listArr.removeAll();
         for(i = 0; i < viewModel.markers().length; i++){
             if(viewModel.markers()[i].title.toLowerCase().indexOf(data) >= 0){
                 viewModel.markers()[i].setVisible(true);
+                self.listArr.push(viewModel.markers()[i])
+                //console.log(viewModel.markers()[i])
             }
             else if(data.length==0){
                 viewModel.markers()[i].setVisible(true);
