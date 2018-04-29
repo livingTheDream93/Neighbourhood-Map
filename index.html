@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
+    	<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Jua|Pacifico|Righteous" rel="stylesheet">
-
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <title>Delhi's Places of Intrest</title>
   </head>
   <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-              <form action="">
+            <div class="filter">
+              <form id="form">
                 <h2><i class="fas fa-filter"></i>Filter Places</h2>
-                <input type="text">
+                <input type="text" data-bind="textInput: query,event: {keyup: search}" autocomplete="on" />
+                <button type="reset">Reset</button>
               </form>
               <div id="list">
-                <h4>Places of Intrest!</h4>
-                <ul data-bind="foreach: list">
-                  <script>
-                    console.log(list)
-                    </script>
-                  <li data-bind="text: title"></li>
+                <h4><i class="fas fa-map-marker-alt"></i> Places of Intrest</h4>
+                <ul data-bind="foreach: viewModel.markers()">
+                  <li data-bind="text: title,click: clickBounce"></li>
                 </ul>
               </div>
             </div>
-            <div class="col-md-9">
+            <div class="map-container">
               <div id="map"></div>
             </div>
           </div>  
     </div>
-   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="lib/knockout-3.4.0.js"></script>
     <script src="app.js"></script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLV_qRbQGCx_6iBYO3iFb5GDX4ICqI2BU&v=3&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLV_qRbQGCx_6iBYO3iFb5GDX4ICqI2BU&v=3&callback=initMap" onerror="loadError()">
     </script>
 
   </body>
