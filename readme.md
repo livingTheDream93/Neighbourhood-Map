@@ -5,10 +5,10 @@
 
 ### Credits
 
-**Wikipedia**
-**KnockoutJS**
-**Stack-Overflow**
-**Google**
+- **Wikipedia**
+- **KnockoutJS**
+- **Stack-Overflow**
+- **Google**
 
 ### API Used
 
